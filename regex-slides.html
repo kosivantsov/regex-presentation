@@ -11,7 +11,7 @@
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/moon.css" id="theme"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/white.css" id="theme"/>
 
 
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
@@ -29,8 +29,489 @@
 <div class="reveal">
 <div class="slides">
 <section>
-<section id="slide-org0a0434d">
-<h2 id="org0a0434d">First slide</h2>
+<section id="slide-orgace2659">
+<h2 id="orgace2659">Regular Expressions</h2>
+
+</section>
+</section>
+<section>
+<section id="slide-orgc9c60fb">
+<h2 id="orgc9c60fb">Useful for advanced search</h2>
+<ul>
+<li class="fragment roll-in">Grammatical forms</li>
+<li class="fragment roll-in">Parts of text written in another script</li>
+<li class="fragment roll-in">Full range of Unicode characters</li>
+<li class="fragment roll-in"><del>Your lost door keys</del></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgb1710da">
+<h2 id="orgb1710da">Useful for custom QA</h2>
+<ul>
+<li class="fragment appear">Conform to Style Guides</li>
+<li class="fragment appear">Following established conventions</li>
+<li class="fragment appear">Boosting your self-esteem</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgcafdba4">
+<h2 id="orgcafdba4">Online RegEx testing</h2>
+<ul>
+<li><a href="https://regex101.com/">https://regex101.com/</a></li>
+<li><a href="https://regexr.com/">https://regexr.com/</a></li>
+<li><a href="https://extendsclass.com/regex-tester.html">https://extendsclass.com/regex-tester.html</a></li>
+
+</ul>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org431be19">
+<h2 id="org431be19">Special Characters</h2>
+<div class="outline-text-2" id="text-org431be19">
+</div>
+</section>
+<section id="slide-org9cf8068">
+<h3 id="org9cf8068">Most characters have their literal meanings</h3>
+<p>
+But these don't:
+</p>
+
+<p>
+<code>.</code> <code>+</code> <code>*</code> <code>?</code> <code>^</code> <code>$</code> <code>(</code> <code>)</code> <code>[</code> <code>]</code> <code>{</code> <code>}</code> <code>|</code> <code>\</code>
+</p>
+</section>
+<section id="slide-org1dfd2e7">
+<h3 id="org1dfd2e7">Some examples</h3>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><code>.</code></td>
+<td class="org-left">Any character</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>^</code></td>
+<td class="org-left">Line beginning</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>$</code></td>
+<td class="org-left">Line end</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\</code></td>
+<td class="org-left">Escape character</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="slide-org40e25c5">
+<h3 id="org40e25c5">Escape?</h3>
+</section>
+<section id="slide-org40e25c5-split">
+
+<h3>Escape?</h3>
+<p>
+Need to use a special character literally?
+</p>
+
+<p>
+Escape it!
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><code>\.</code></td>
+<td class="org-left">Actual .</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\\</code></td>
+<td class="org-left">Actual \</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="slide-org40e25c5-split">
+
+<h3>Escape?</h3>
+<p>
+Escaped letters acquire a special meaning
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><code>\s</code></td>
+<td class="org-left">Any whitespace</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\d</code></td>
+<td class="org-left">Any digit</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\t</code></td>
+<td class="org-left">Tabulation</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+</section>
+<section>
+<section id="slide-org95766bb">
+<h2 id="org95766bb">Grouping</h2>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><code>[ ]</code></td>
+<td class="org-left">Characters or ranges of characters in brackets</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>[^]</code></td>
+<td class="org-left">Characters or ranges of characters not in brackets</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>∣</code></td>
+<td class="org-left">OR operator</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>( )</code></td>
+<td class="org-left">Capturing group (for further reference, etc.)</td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org8f19c14">
+<h2 id="org8f19c14">Quantifiers</h2>
+<p>
+These specify how many times the searched item should be matched
+</p>
+
+<p>
+They apply only to the <span class="underline">preceding</span> character or group
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides" class="fragment (appear)">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><code>*</code></td>
+<td class="org-left">Zero or more instances</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>+</code></td>
+<td class="org-left">One or more instances</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>?</code></td>
+<td class="org-left">Zero or one instance</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="slide-org8f19c14-split">
+
+<h2>Quantifiers</h2>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><code>{N}</code></td>
+<td class="org-left">Exactly N instances</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>{N,}</code></td>
+<td class="org-left">N or more instances</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>{M,N}</code></td>
+<td class="org-left">M or more instances but no more than N instances</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+</section>
+<section>
+<section id="slide-org3174ad4">
+<h2 id="org3174ad4">Some of the mostly used special characters</h2>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><code>\b</code></td>
+<td class="org-left">Word boundary</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\B</code></td>
+<td class="org-left">Not a word boundary</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\d</code></td>
+<td class="org-left">Digit</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\D</code></td>
+<td class="org-left">Not a digit</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\w</code></td>
+<td class="org-left">Word character</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\W</code></td>
+<td class="org-left">Not a word character</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\s</code></td>
+<td class="org-left">Whitespace</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\S</code></td>
+<td class="org-left">Not whitespace</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+</section>
+<section>
+<section id="slide-orgfa5a2fc">
+<h2 id="orgfa5a2fc">Unicode Categories</h2>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><code>\p{L}</code> or <code>\p{Letter}</code></td>
+<td class="org-left">Any kind of letter from any language</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\p{Ll}</code> or <code>\p{Lowercase_Letter}</code></td>
+<td class="org-left">A lowercase letter that has an uppercase variant</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\p{Lu}</code> or <code>\p{Uppercase_Letter}</code></td>
+<td class="org-left">An uppercase letter that has a lowercase variant</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="slide-orgfa5a2fc-split">
+
+<h2>Unicode Categories</h2>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><code>\p{Z}</code> or <code>\p{Separator}</code></td>
+<td class="org-left">Any kind of whitespace or invisible separator</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\p{Zs}</code> or <code>\p{Space_Separator}</code></td>
+<td class="org-left">A whitespace character that is invisible, but does take up space</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\p{Zp}</code> or <code>\p{Paragraph_Separator}</code></td>
+<td class="org-left">Paragraph separator character U+2029</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="slide-orgfa5a2fc-split">
+
+<h2>Unicode Categories</h2>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><code>\p{P}</code> or <code>\p{Punctuation}</code></td>
+<td class="org-left">Any kind of punctuation character</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\p{Pd}</code> or <code>\p{Dash_Punctuation}</code></td>
+<td class="org-left">Any kind of hyphen or dash</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\p{Ps}</code> or <code>\p{Open_Punctuation}</code></td>
+<td class="org-left">Any kind of opening bracket</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\p{Pe}</code> or <code>\p{Close_Punctuation}</code></td>
+<td class="org-left">Any kind of closing bracket</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\p{Pi}</code> or <code>\p{Initial_Punctuation}</code></td>
+<td class="org-left">Any kind of opening quote</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\p{Pf}</code> or <code>\p{Final_Punctuation}</code></td>
+<td class="org-left">Any kind of closing quote</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section>
+<section id="slide-orge80b6ac">
+<h2 id="orge80b6ac">Unicode Scripts</h2>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><code>\p{Arabic}</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\p{Armenian}</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\p{Bengali}</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\p{Braille}</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\p{Cherokee}</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\p{Cyrillic}</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\p{Devanagari}</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\p{Ethiopic}</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\p{Georgian}</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>\p{Greek}</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section>
+<section id="slide-orga11d43b">
+<h2 id="orga11d43b">Learn even more powerful spells</h2>
+<p>
+<a href="https://www.regular-expressions.info/">https://www.regular-expressions.info/</a>
+</p>
 </section>
 </section>
 </div>
