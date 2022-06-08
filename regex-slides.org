@@ -1,3 +1,109 @@
 #+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
+#+OPTIONS: reveal_title_slide:nil toc:nil num:nil
+#+REVEAL_THEME: white
+#+REVEAL_TRANS: cube
+* Regular Expressions
 
-* First slide
+* Useful for advanced search
+
+#+ATTR_REVEAL: :frag (roll-in)
+  * Grammatical forms
+  * Parts of text written in another script
+  * Full range of Unicode characters
+  * +Your lost door keys+
+
+* Useful for custom QA 
+ 
+#+ATTR_REVEAL: :frag (appear)
+   * Conform to Style Guides
+   * Following established conventions
+   * Boosting your self-esteem
+
+* Online RegEx testing
+  * https://regex101.com/
+  * https://regexr.com/
+  * https://extendsclass.com/regex-tester.html 
+
+
+* Special Characters
+**  Most characters have their literal meanings
+  But these don't:
+
+~.~ ~+~ ~*~ ~?~ ~^~ ~$~ ~(~ ~)~ ~[~ ~]~ ~{~ ~}~ ~|~ ~\~
+** Some examples
+  | ~.~ | Any character    |
+  | ~^~ | Line beginning   |
+  | ~$~ | Line end         |
+  | ~\~ | Escape character |
+** Escape?
+#+REVEAL: split:t
+  Need to use a special character literally?
+
+  Escape it!
+
+  | ~\.~ | Actual . |
+  | ~\\~ | Actual \ 
+#+REVEAL: split:t
+  Escaped letters acquire a special meaning
+  | ~\s~ | Any whitespace |
+  | ~\d~ | Any digit      |
+  | ~\t~ | Tabulation     |
+
+* Grouping
+  | ~[ ]~  | Characters or ranges of characters in brackets     |
+  | ~[^]~  | Characters or ranges of characters not in brackets |
+  | ~∣~    | OR operator                                        |
+  | ~( )~  | Capturing group (for further reference, etc.)      |
+
+
+* Quantifiers
+  These specify how many times the searched item should be matched
+
+  They apply only to the _preceding_ character or group
+#+ATTR_REVEAL: :frag (appear)
+   | ~*~     | Zero or more instances                           |
+   | ~+~     | One or more instances                            |
+   | ~?~     | Zero or one instance                             |
+#+REVEAL: split:t
+   | ~{N}~   | Exactly N instances                              |
+   | ~{N,}~  | N or more instances                              |
+   | ~{M,N}~ | M or more instances but no more than N instances |
+
+* Some of the mostly used special characters
+  | ~\b~ | Word boundary        |
+  | ~\B~ | Not a word boundary  |
+  | ~\d~ | Digit                |
+  | ~\D~ | Not a digit          |
+  | ~\w~ | Word character       |
+  | ~\W~ | Not a word character |
+  | ~\s~ | Whitespace           |
+  | ~\S~ | Not whitespace       |
+
+* Unicode Categories
+  | ~\p{L}~ or ~\p{Letter}~            | Any kind of letter from any language             |
+  | ~\p{Ll}~ or ~\p{Lowercase_Letter}~ | A lowercase letter that has an uppercase variant |
+  | ~\p{Lu}~ or ~\p{Uppercase_Letter}~ | An uppercase letter that has a lowercase variant |
+#+REVEAL: split:t
+  | ~\p{Z}~ or ~\p{Separator}~            | Any kind of whitespace or invisible separator                    |
+  | ~\p{Zs}~ or ~\p{Space_Separator}~     | A whitespace character that is invisible, but does take up space |
+  | ~\p{Zp}~ or ~\p{Paragraph_Separator}~ | Paragraph separator character U+2029                             |
+#+REVEAL: split:t
+  | ~\p{P}~ or ~\p{Punctuation}~      | Any kind of punctuation character |
+  | ~\p{Pd}~ or ~\p{Dash_Punctuation}~ | Any kind of hyphen or dash        |
+  | ~\p{Ps}~ or ~\p{Open_Punctuation}~ | Any kind of opening bracket       |
+  | ~\p{Pe}~ or ~\p{Close_Punctuation}~ | Any kind of closing bracket       |
+  | ~\p{Pi}~ or ~\p{Initial_Punctuation}~ | Any kind of opening quote         |
+  | ~\p{Pf}~ or ~\p{Final_Punctuation}~ | Any kind of closing quote         |
+* Unicode Scripts
+  | ~\p{Arabic}~     |
+  | ~\p{Armenian}~   |
+  | ~\p{Bengali}~    |
+  | ~\p{Braille}~    |
+  | ~\p{Cherokee}~   |
+  | ~\p{Cyrillic}~   |
+  | ~\p{Devanagari}~ |
+  | ~\p{Ethiopic}~   |
+  | ~\p{Georgian}~   |
+  | ~\p{Greek}~      |
+* Learn even more powerful spells
+https://www.regular-expressions.info/
